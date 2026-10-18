@@ -1,0 +1,122 @@
+id,vendor,segment,name,architecture,form_factor,memory_gb,memory_type,memory_bandwidth_gbps,memory_bus_bits,memory_reported_mib,fp64_tflops,fp64_tensor_tflops,fp32_tflops,tf32_tensor_tflops,bf16_tensor_tflops,fp16_tensor_tflops,fp16_tensor_fp16_acc_tflops,fp8_tensor_tflops,fp8_tensor_fp16_acc_tflops,fp6_tensor_tflops,fp4_tensor_tflops,int8_tensor_tops,gpu_link_gbps,gpu_link_per_direction_gbps,infinity_fabric_links,pcie,max_power_w
+h100-sxm5-80gb,NVIDIA,datacenter,NVIDIA H100 SXM,Hopper,SXM5,80,HBM3,3350,5120,81559,33.5,66.9,66.9,494.7,989.4,989.4,,1978.9,,n/a,n/a,1978.9,900,450,,PCIe Gen5: 128GB/s,700
+h100-sxm5-94gb,NVIDIA,datacenter,H100-SXM5 (94GB),Hopper,SXM5,94,TBD,TBD,TBD,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,TBD,,,TBD,TBD
+h100-pcie-80gb,NVIDIA,datacenter,NVIDIA H100 PCIe,Hopper,PCIe (FHFL dual-slot),80,HBM2e,2000,5120,81559,25.6,51.2,51.2,378,756,756,,1513,,n/a,n/a,1513,600,,,PCI Express Gen5 x16,350
+h100-nvl-94gb,NVIDIA,datacenter,NVIDIA H100 NVL,Hopper,"NVL (PCIe dual-slot, NVLink bridge)",94,HBM3,3938,6016,95830,30,60,60,417.5,835.5,835.5,,1670.5,,n/a,n/a,1670.5,600,300,,PCIe Gen5: 128GB/s,400
+h200-sxm-141gb,NVIDIA,datacenter,NVIDIA H200 SXM,Hopper,SXM,141,HBM3e,4800,TBD,143771,34,67,67,494.5,989.5,989.5,,1979,,n/a,n/a,1979,900,450,,PCIe Gen5: 128GB/s,700
+h200-nvl-141gb,NVIDIA,datacenter,NVIDIA H200 NVL,Hopper,"NVL (PCIe dual-slot, NVLink bridge)",141,HBM3e,4800,TBD,,30,60,60,417.5,835.5,835.5,,1670.5,,n/a,n/a,1670.5,900,,,PCIe Gen5: 128GB/s,600
+b200-sxm-180gb,NVIDIA,datacenter,NVIDIA Blackwell GPU (HGX B200 / DGX B200),Blackwell,SXM (HGX 8-GPU baseboard),180,HBM3E,7700,TBD,183359,37,37,75,1100,2250,2250,,4500,,4500,9000,4500,1800,900,,PCIe Gen5: 128 GB/s,1000
+gb200-nvl72-gpu-186gb,NVIDIA,datacenter,"NVIDIA Blackwell GPU (GB200 NVL72, individual GPU)",Blackwell,"Grace Blackwell Superchip (1 Grace CPU + 2 Blackwell GPUs), NVL72 rack",186,HBM3E,8000,TBD,189471,40,40,80,1250,2500,2500,,5000,,5000,10000,5000,1800,900,,PCIe Gen5: 128 GB/s,1200
+gb200-nvl4-gpu-186gb,NVIDIA,datacenter,"NVIDIA Blackwell GPU (GB200 NVL4, individual GPU)",Blackwell,"GB200 NVL4 board (4 Blackwell GPUs + 2 Grace CPUs, NVLink bridge)",186,HBM3E,8000,TBD,,40,40,80,1250,2500,2500,,5000,,5000,10000,5000,1800,900,,PCIe Gen5: 128 GB/s,1200
+b300-sxm-270gb,NVIDIA,datacenter,NVIDIA Blackwell Ultra GPU (HGX B300 / DGX B300),Blackwell Ultra,SXM (HGX 8-GPU baseboard),270,HBM3E,7700,TBD,,1.2,1.2,75,1100,2250,2250,,4500,,4500,14000,153.5,1800,900,,PCIe Gen6: 256 GB/s,1100
+gb300-nvl72-gpu-279gb,NVIDIA,datacenter,"NVIDIA Blackwell Ultra GPU (GB300 NVL72, individual GPU)",Blackwell Ultra,"Grace Blackwell Ultra Superchip, NVL72 rack",279,HBM3E,8000,TBD,,1.3,1.3,80,1250,2500,2500,,5000,,5000,15000,165,1800,900,,PCIe Gen6: 256 GB/s,1400
+gb300-dgx-station-252gb,NVIDIA,workstation,"NVIDIA Blackwell Ultra GPU (DGX Station, GB300 Grace Blackwell Ultra Desktop Superchip)",Blackwell Ultra,GB300 Desktop Superchip (deskside system),252,HBM3e,7100,TBD,,1.3,1.3,80,1250,2500,2500,,5000,,5000,15000,165,n/a,,,TBD,TBD
+mi300x-oam-192gb,AMD,datacenter,AMD Instinct MI300X,CDNA 3,OAM,192,HBM3,5300,8192,,81.7,163.4,163.4,653.7,1307.4,1307.4,,2614.9,,n/a,n/a,2614.9,896,448,7,PCIe Gen 5 x16,750
+mi300a-sh5-128gb,AMD,datacenter,AMD Instinct MI300A,CDNA 3,APU SH5 socket,128,HBM3,5300,8192,,61.3,122.6,122.6,490.3,980.6,980.6,,1961.2,,n/a,n/a,1961.2,1000,500,8,PCIe Gen 5 x16,760
+mi325x-oam-256gb,AMD,datacenter,AMD Instinct MI325X,CDNA 3,OAM,256,HBM3E,6000,8192,,81.7,163.4,163.4,653.7,1307.4,1307.4,,2614.9,,n/a,n/a,2614.9,896,448,7,PCIe Gen 5 x16,1000
+mi350x-oam-288gb,AMD,datacenter,AMD Instinct MI350X,CDNA 4,OAM,288,HBM3E,8000,8192,,72.1,72.1,144.2,n/a,2309.6,2309.6,,4614,,9227.5,9227.5,4614,1075.2,537.6,7,PCIe Gen 5 x16,1000
+mi355x-oam-288gb,AMD,datacenter,AMD Instinct MI355X,CDNA 4,OAM,288,HBM3E,8000,8192,,78.6,78.6,157.3,n/a,2516.6,2516.6,,5033.2,,10066.3,10066.3,5033.2,1075.2,537.6,7,PCIe Gen 5 x16,1400
+mi350p-pcie-144gb,AMD,datacenter,AMD Instinct MI350P,CDNA 4,PCIe,144,HBM3E,4000,4096,,36,36,72,n/a,1150,1150,,2300,,4600,4600,2300,TBD,,TBD,PCIe Gen 5 x16,600
+mi455x-eam-432gb,AMD,datacenter,AMD Instinct MI455X,CDNA 5,EAM,432,HBM4,23300,TBD,,5,5,315,TBD,5033,5033,,20133,,20133,40265,5033,3600,1800,TBD,TBD,TBD
+a2-pcie-16gb,NVIDIA,datacenter,NVIDIA A2 Tensor Core GPU,Ampere,"PCIe, low-profile, single-slot",16,GDDR6,200,128,,TBD,n/a,4.5,9,18,18,,n/a,,n/a,n/a,36,n/a,,,PCIe Gen4 x8,60
+a10-pcie-24gb,NVIDIA,datacenter,NVIDIA A10,Ampere,"PCIe, single-slot FHFL",24,GDDR6,600,384,,TBD,n/a,31.2,62.5,125,125,,n/a,,n/a,n/a,250,n/a,,,PCIe Gen4 x16,150
+a16-pcie-4x16gb,NVIDIA,datacenter,NVIDIA A16,Ampere,"PCIe, dual-slot FHFL, four GPUs per board",16,GDDR6,200,128,,TBD,n/a,4.5,9,TBD,17.9,,n/a,,n/a,n/a,35.9,n/a,,,PCIe Gen4 x16,250
+a30-pcie-24gb,NVIDIA,datacenter,NVIDIA A30 Tensor Core GPU,Ampere,"PCIe, dual-slot FHFL",24,HBM2,933,3072,,5.2,10.3,10.3,82,165,165,,n/a,,n/a,n/a,330,200,,,PCIe Gen4 x16,165
+a40-pcie-48gb,NVIDIA,datacenter,NVIDIA A40,Ampere,"PCIe, dual-slot FHFL",48,GDDR6,696,384,,TBD,n/a,37.4,74.8,149.7,149.7,,n/a,,n/a,n/a,299.3,112.5,56.25,,PCIe Gen4 x16,300
+a100-pcie-40gb,NVIDIA,datacenter,NVIDIA A100 40GB PCIe,Ampere,"PCIe, dual-slot FHFL",40,HBM2,1555,5120,,9.7,19.5,19.5,156,312,312,,n/a,,n/a,n/a,624,600,,,PCIe Gen4 x16,250
+a100-pcie-80gb,NVIDIA,datacenter,NVIDIA A100 80GB PCIe,Ampere,"PCIe, dual-slot air-cooled or single-slot liquid-cooled",80,HBM2e,1935,5120,,9.7,19.5,19.5,156,312,312,,n/a,,n/a,n/a,624,600,,,PCIe Gen4,300
+a100-sxm4-40gb,NVIDIA,datacenter,NVIDIA A100 40GB SXM,Ampere,SXM4,40,HBM2,1555,5120,,9.7,19.5,19.5,156,312,312,,n/a,,n/a,n/a,624,600,,,PCIe Gen4,400
+a100-sxm4-80gb,NVIDIA,datacenter,NVIDIA A100 80GB SXM,Ampere,SXM4,80,HBM2e,2039,TBD,,9.7,19.5,19.5,156,312,312,,n/a,,n/a,n/a,624,600,,,PCIe Gen4,400
+v100-pcie-16gb,NVIDIA,datacenter,Tesla V100 PCIe,Volta,"PCIe, full height, full length",16,HBM2,900,TBD,,7,n/a,14,n/a,n/a,112,,n/a,,n/a,n/a,n/a,n/a,,,PCIe Gen3,250
+v100-pcie-32gb,NVIDIA,datacenter,Tesla V100 PCIe 32GB,Volta,"PCIe, full height, full length",32,HBM2,900,TBD,,7,n/a,14,n/a,n/a,112,,n/a,,n/a,n/a,n/a,n/a,,,PCIe Gen3,250
+v100-sxm2-16gb,NVIDIA,datacenter,Tesla V100 SXM2,Volta,SXM2,16,HBM2,900,4096,,7.8,n/a,15.7,n/a,n/a,125,,n/a,,n/a,n/a,n/a,300,150,,PCIe Gen3,300
+v100-sxm2-32gb,NVIDIA,datacenter,Tesla V100 SXM2 32GB,Volta,SXM2,32,HBM2,900,4096,,7.8,n/a,15.7,n/a,n/a,125,,n/a,,n/a,n/a,n/a,300,150,,PCIe Gen3,300
+v100-sxm3-32gb,NVIDIA,datacenter,Tesla V100 SXM3 32GB,Volta,SXM3,32,HBM2,TBD,TBD,,TBD,n/a,TBD,n/a,n/a,TBD,,n/a,,n/a,n/a,n/a,300,150,,TBD,TBD
+v100s-pcie-32gb,NVIDIA,datacenter,Tesla V100S PCIe 32GB,Volta,"PCIe, full height, full length",32,HBM2,1134,TBD,,8.2,n/a,16.4,n/a,n/a,130,,n/a,,n/a,n/a,n/a,n/a,,,PCIe Gen3,250
+v100-fhhl,NVIDIA,datacenter,Tesla V100 FHHL,Volta,"FHHL (full height, half length) PCIe",TBD,TBD,TBD,TBD,,TBD,n/a,TBD,n/a,n/a,TBD,,n/a,,n/a,n/a,n/a,TBD,,,TBD,TBD
+t4-pcie-16gb,NVIDIA,datacenter,NVIDIA T4,Turing,"PCIe, low-profile, single-slot",16,GDDR6,320,256,,TBD,n/a,8.1,n/a,n/a,65,,n/a,,n/a,n/a,130,n/a,,,PCIe Gen3 x16,70
+l4-pcie-24gb,NVIDIA,datacenter,NVIDIA L4 Tensor Core GPU,Ada Lovelace,"PCIe, low-profile, single-slot",24,GDDR6,300,192,,TBD,TBD,30.3,60,121,121,,242,,n/a,n/a,242,n/a,,,PCIe Gen4 x16,72
+l40-pcie-48gb,NVIDIA,datacenter,NVIDIA L40,Ada Lovelace,"PCIe, dual-slot FHFL",48,GDDR6,864,TBD,,TBD,TBD,90.5,90.5,181.05,181.05,,362,,n/a,n/a,362,n/a,,,PCIe Gen4 x16,300
+l40s-pcie-48gb,NVIDIA,datacenter,NVIDIA L40S,Ada Lovelace,"PCIe, dual-slot FHFL",48,GDDR6,864,TBD,,TBD,TBD,91.6,183,362.05,362.05,,733,,n/a,n/a,733,n/a,,,PCIe Gen4 x16,350
+rtx-a400-4gb,NVIDIA,workstation,NVIDIA RTX A400,Ampere,"PCIe, low profile, single slot (2.7 in H x 6.4 in L)",4,GDDR6,96,64,,TBD,TBD,2.7,TBD,TBD,10.85,,n/a,,n/a,n/a,21.65,,,,PCIe Gen 4 x8,50
+rtx-a1000-8gb,NVIDIA,workstation,NVIDIA RTX A1000,Ampere,"PCIe, low profile, single slot (2.7 in H x 6.4 in L)",8,GDDR6,192,128,,TBD,TBD,6.7,TBD,TBD,26.9,,n/a,,n/a,n/a,53.9,,,,PCIe Gen 4 x8,50
+rtx-a2000-6gb,NVIDIA,workstation,NVIDIA RTX A2000,Ampere,"PCIe, low profile, dual slot (2.7 in H x 6.6 in L)",6,GDDR6,288,192,,TBD,TBD,8,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,,,,PCIe Gen 4 x16,70
+rtx-a2000-12gb,NVIDIA,workstation,NVIDIA RTX A2000 12GB,Ampere,"PCIe, low profile, dual slot (2.7 in H x 6.6 in L)",12,GDDR6,288,192,,TBD,TBD,8,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,,,,PCIe Gen 4 x16,70
+rtx-a4000-16gb,NVIDIA,workstation,NVIDIA RTX A4000,Ampere,"PCIe, full height, single slot (4.4 in H x 9.5 in L)",16,GDDR6,448,256,,TBD,TBD,19.2,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,,,,PCIe Gen 4 x16,140
+rtx-a4500-20gb,NVIDIA,workstation,NVIDIA RTX A4500,Ampere,"PCIe, full height, dual slot (4.4 in H x 10.5 in L)",20,GDDR6,640,320,,TBD,TBD,23.7,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,112.5,56.25,,PCIe Gen 4 x16,200
+rtx-a5000-24gb,NVIDIA,workstation,NVIDIA RTX A5000,Ampere,"PCIe, full height, dual slot (4.4 in H x 10.5 in L)",24,GDDR6,768,384,,TBD,TBD,27.8,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,112.5,56.25,,PCIe Gen 4 x16,230
+rtx-a5500-24gb,NVIDIA,workstation,NVIDIA RTX A5500,Ampere,"PCIe, full height, dual slot (4.4 in H x 10.5 in L)",24,GDDR6,768,384,,TBD,TBD,34.1,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,112.5,56.25,,PCIe Gen 4 x16,230
+rtx-a6000-48gb,NVIDIA,workstation,NVIDIA RTX A6000,Ampere,"PCIe, full height, dual slot (4.4 in H x 10.5 in L)",48,GDDR6,768,384,,TBD,TBD,38.7,77.4,154.8,154.8,,n/a,,n/a,n/a,309.7,112.5,56.25,,PCIe Gen 4 x16,300
+rtx-2000-ada-16gb,NVIDIA,workstation,NVIDIA RTX 2000 Ada Generation,Ada Lovelace,"PCIe, low profile, dual slot (2.7 in H x 6.6 in L)",16,GDDR6,224,128,,TBD,TBD,12,TBD,TBD,TBD,,95.95,,n/a,n/a,TBD,,,,PCIe Gen 4 x8,70
+rtx-2000e-ada-16gb,NVIDIA,workstation,NVIDIA RTX 2000E Ada Generation,Ada Lovelace,"PCIe, low profile, single slot (2.7 in H x 6.6 in L)",16,GDDR6,224,128,,TBD,TBD,8.9,TBD,TBD,TBD,,71,,n/a,n/a,TBD,,,,PCIe Gen 4 x8,50
+rtx-4000-sff-ada-20gb,NVIDIA,workstation,NVIDIA RTX 4000 SFF Ada Generation,Ada Lovelace,"PCIe, low profile, dual slot (2.7 in H x 6.6 in L)",20,GDDR6,280,160,,TBD,TBD,19.2,TBD,TBD,TBD,,153.4,,n/a,n/a,TBD,n/a,,,PCIe Gen 4 x16,70
+rtx-4000-ada-20gb,NVIDIA,workstation,NVIDIA RTX 4000 Ada Generation,Ada Lovelace,"PCIe, full height, single slot (4.4 in H x 9.5 in L)",20,GDDR6,360,160,,TBD,TBD,26.7,TBD,TBD,TBD,,163.8,,n/a,n/a,TBD,n/a,,,PCIe Gen 4 x16,130
+rtx-4500-ada-24gb,NVIDIA,workstation,NVIDIA RTX 4500 Ada Generation,Ada Lovelace,"PCIe, full height, dual slot (4.4 in H x 10.5 in L)",24,GDDR6,432,192,,TBD,TBD,39.6,TBD,TBD,TBD,,317,,n/a,n/a,TBD,n/a,,,PCIe Gen 4 x16,210
+rtx-5000-ada-32gb,NVIDIA,workstation,NVIDIA RTX 5000 Ada Generation,Ada Lovelace,"PCIe, full height, dual slot (4.4 in H x 10.5 in L)",32,GDDR6,576,256,,TBD,TBD,65.3,TBD,TBD,TBD,,522.2,,n/a,n/a,TBD,n/a,,,PCIe Gen 4 x16,250
+rtx-5880-ada-48gb,NVIDIA,workstation,NVIDIA RTX 5880 Ada Generation,Ada Lovelace,"PCIe, dual slot (4.4 in H x 10.5 in L)",48,GDDR6,TBD,TBD,,TBD,TBD,69.3,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,,,,PCIe Gen 4 x16,285
+rtx-6000-ada-48gb,NVIDIA,workstation,NVIDIA RTX 6000 Ada Generation,Ada Lovelace,"PCIe, full height, dual slot (4.4 in H x 10.5 in L)",48,GDDR6,960,384,,TBD,TBD,91.1,182.1,364.2,364.2,,728.5,,n/a,n/a,728.5,n/a,,,PCIe Gen 4 x16,300
+rtx-pro-2000-blackwell-16gb,NVIDIA,workstation,NVIDIA RTX PRO 2000 Blackwell,Blackwell,"PCIe, low profile, dual slot (2.7 in H x 6.6 in L)",16,GDDR7,288,128,,TBD,TBD,17,TBD,TBD,TBD,,TBD,,TBD,272.5,TBD,,,,PCIe Gen 5 x8,70
+rtx-pro-4000-sff-blackwell-24gb,NVIDIA,workstation,NVIDIA RTX PRO 4000 Blackwell SFF Edition,Blackwell,"PCIe, half height, dual slot (2.7 in x 6.6 in L)",24,GDDR7,432,192,,TBD,TBD,24,TBD,TBD,TBD,,TBD,,TBD,385,TBD,,,,PCIe Gen 5 x8,70
+rtx-pro-4000-blackwell-24gb,NVIDIA,workstation,NVIDIA RTX PRO 4000 Blackwell,Blackwell,"PCIe, full height, single slot (4.4 in x 9.5 in L)",24,GDDR7,672,192,,TBD,TBD,37,TBD,TBD,TBD,,TBD,,TBD,589,TBD,,,,PCIe Gen 5 x16,145
+rtx-pro-4500-blackwell-we-32gb,NVIDIA,workstation,NVIDIA RTX PRO 4500 Blackwell Workstation Edition,Blackwell,"PCIe, full height, dual slot (4.4 in x 10.5 in L)",32,GDDR7,896,256,,TBD,TBD,51,TBD,TBD,TBD,,TBD,,TBD,808.5,TBD,,,,PCIe Gen 5 x16,200
+rtx-pro-5000-blackwell-48gb,NVIDIA,workstation,NVIDIA RTX PRO 5000 Blackwell,Blackwell,"PCIe, full height, dual slot (4.4 in x 10.5 in L)",48,GDDR7,1344,384,,TBD,TBD,65,TBD,TBD,TBD,,TBD,,TBD,1032,TBD,,,,PCIe Gen 5 x16,300
+rtx-pro-5000-blackwell-72gb,NVIDIA,workstation,NVIDIA RTX PRO 5000 72GB Blackwell,Blackwell,"PCIe, full height, dual slot (4.4 in x 10.5 in L)",72,GDDR7,1344,384,,TBD,TBD,65,TBD,TBD,TBD,,TBD,,TBD,1032,TBD,,,,PCIe Gen 5 x16,300
+rtx-pro-5500-blackwell-we-84gb,NVIDIA,workstation,NVIDIA RTX PRO 5500 Blackwell Workstation Edition,Blackwell,"PCIe card for rack-mounted workstations, active air-cooled (liquid-cooled RXM form factor also offered)",84,GDDR7,1398,TBD,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,TBD,TBD,TBD,,,,PCIe Gen 5 x16,600
+rtx-pro-6000-blackwell-max-q-96gb,NVIDIA,workstation,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition,Blackwell,"PCIe, full height, dual slot (4.4 in x 10.5 in L)",96,GDDR7,1792,512,,TBD,TBD,110,TBD,TBD,TBD,,TBD,,TBD,1755.5,TBD,,,,PCIe Gen 5 x16,300
+rtx-pro-6000-blackwell-we-96gb,NVIDIA,workstation,NVIDIA RTX PRO 6000 Blackwell Workstation Edition,Blackwell,"PCIe, extended height, dual slot (5.4 in H x 12 in L)",96,GDDR7,1792,512,,TBD,TBD,126,TBD,TBD,TBD,,TBD,,TBD,2000,TBD,,,,PCIe Gen 5 x16,600
+rtx-pro-6000-blackwell-se-96gb,NVIDIA,datacenter,NVIDIA RTX PRO 6000 Blackwell Server Edition,Blackwell,"PCIe, FHFL, dual slot, passive (4.4 in H x 10.5 in L)",96,GDDR7,1597,512,,TBD,TBD,120,TBD,TBD,TBD,,TBD,,TBD,TBD,TBD,n/a,,,PCIe Gen 5 x16,600
+rtx-pro-4500-blackwell-se-32gb,NVIDIA,datacenter,NVIDIA RTX PRO 4500 Blackwell Server Edition,Blackwell,"PCIe, FHFL, single slot, passive (4.4 in H x 10.5 in L)",32,GDDR7,800,256,,TBD,TBD,51,TBD,TBD,TBD,,TBD,,TBD,TBD,TBD,n/a,,,PCIe Gen 5 x16,165
+rtx-3090-ti-24gb,NVIDIA,geforce-desktop,GeForce RTX 3090 Ti,Ampere,Desktop graphics card (PCIe add-in card),24,GDDR6X,1008,384,,TBD,TBD,40,40,80,80,160,n/a,n/a,n/a,n/a,320,TBD,,,PCIe Gen 4,450
+rtx-3090-24gb,NVIDIA,geforce-desktop,GeForce RTX 3090,Ampere,Desktop graphics card (PCIe add-in card),24,GDDR6X,936,384,,TBD,TBD,35.6,35.6,71,71,142,n/a,n/a,n/a,n/a,284,112.5,56.25,,PCIe Gen 4,350
+rtx-3080-ti-12gb,NVIDIA,geforce-desktop,GeForce RTX 3080 Ti,Ampere,Desktop graphics card (PCIe add-in card),12,GDDR6X,912,384,,TBD,TBD,34.1,34.1,68.2,68.2,136.4,n/a,n/a,n/a,n/a,272.8,n/a,,,PCIe Gen 4,350
+rtx-3080-12gb,NVIDIA,geforce-desktop,GeForce RTX 3080,Ampere,Desktop graphics card (PCIe add-in card),12,GDDR6X,TBD,384,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,n/a,,,PCIe Gen 4,350
+rtx-3080-10gb,NVIDIA,geforce-desktop,GeForce RTX 3080,Ampere,Desktop graphics card (PCIe add-in card),10,GDDR6X,760,320,,TBD,TBD,29.8,29.8,59.5,59.5,119,n/a,n/a,n/a,n/a,238,n/a,,,PCIe Gen 4,320
+rtx-3070-ti-8gb,NVIDIA,geforce-desktop,GeForce RTX 3070 Ti,Ampere,Desktop graphics card (PCIe add-in card),8,GDDR6X,608,256,,TBD,TBD,21.7,21.7,43.5,43.5,87,n/a,n/a,n/a,n/a,174,n/a,,,PCIe Gen 4,290
+rtx-3070-8gb,NVIDIA,geforce-desktop,GeForce RTX 3070,Ampere,Desktop graphics card (PCIe add-in card),8,GDDR6,448,256,,TBD,TBD,20.3,20.3,40.6,40.6,81.3,n/a,n/a,n/a,n/a,162.6,n/a,,,PCIe Gen 4,220
+rtx-3060-ti-8gb-gddr6,NVIDIA,geforce-desktop,GeForce RTX 3060 Ti,Ampere,Desktop graphics card (PCIe add-in card),8,GDDR6,TBD,256,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,n/a,,,PCIe Gen 4,200
+rtx-3060-ti-8gb-gddr6x,NVIDIA,geforce-desktop,GeForce RTX 3060 Ti,Ampere,Desktop graphics card (PCIe add-in card),8,GDDR6X,TBD,256,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,n/a,,,PCIe Gen 4,200
+rtx-3060-12gb,NVIDIA,geforce-desktop,GeForce RTX 3060,Ampere,Desktop graphics card (PCIe add-in card),12,GDDR6,TBD,192,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,n/a,,,PCIe Gen 4,170
+rtx-3060-8gb,NVIDIA,geforce-desktop,GeForce RTX 3060,Ampere,Desktop graphics card (PCIe add-in card),8,GDDR6,TBD,128,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,n/a,,,PCIe Gen 4,170
+rtx-3050-8gb,NVIDIA,geforce-desktop,GeForce RTX 3050 (8 GB),Ampere,Desktop graphics card (PCIe add-in card),8,GDDR6,TBD,128,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,n/a,,,PCIe Gen 4,130
+rtx-3050-6gb,NVIDIA,geforce-desktop,GeForce RTX 3050 (6 GB),Ampere,Desktop graphics card (PCIe add-in card),6,GDDR6,TBD,96,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,n/a,,,PCIe Gen 4,70
+rtx-4090-24gb,NVIDIA,geforce-desktop,GeForce RTX 4090,Ada Lovelace,Desktop graphics card (PCIe add-in card),24,GDDR6X,1008,384,,TBD,TBD,82.6,82.6,165.2,165.2,330.3,330.3,660.6,n/a,n/a,660.6,n/a,,,PCIe Gen 4,450
+rtx-4080-super-16gb,NVIDIA,geforce-desktop,GeForce RTX 4080 SUPER,Ada Lovelace,Desktop graphics card (PCIe add-in card),16,GDDR6X,TBD,256,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,n/a,,,PCIe Gen 4,320
+rtx-4080-16gb,NVIDIA,geforce-desktop,GeForce RTX 4080,Ada Lovelace,Desktop graphics card (PCIe add-in card),16,GDDR6X,716.8,256,,TBD,TBD,48.7,48.7,97.5,97.5,194.9,194.9,389.9,n/a,n/a,389.9,n/a,,,PCIe Gen 4,320
+rtx-4070-ti-super-16gb,NVIDIA,geforce-desktop,GeForce RTX 4070 Ti SUPER,Ada Lovelace,Desktop graphics card (PCIe add-in card),16,GDDR6X,672,256,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,n/a,,,PCIe Gen 4,285
+rtx-4070-ti-12gb,NVIDIA,geforce-desktop,GeForce RTX 4070 Ti,Ada Lovelace,Desktop graphics card (PCIe add-in card),12,GDDR6X,504,192,,TBD,TBD,40.1,40.1,80.2,80.2,160.4,160.4,320.7,n/a,n/a,320.7,n/a,,,PCIe Gen 4,285
+rtx-4070-super-12gb,NVIDIA,geforce-desktop,GeForce RTX 4070 SUPER,Ada Lovelace,Desktop graphics card (PCIe add-in card),12,GDDR6X,TBD,192,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,n/a,,,PCIe Gen 4,220
+rtx-4070-12gb-gddr6x,NVIDIA,geforce-desktop,GeForce RTX 4070,Ada Lovelace,Desktop graphics card (PCIe add-in card),12,GDDR6X,504,192,,TBD,TBD,29.1,29.1,58.3,58.3,116.6,116.6,233.2,n/a,n/a,233.2,n/a,,,PCIe Gen 4,200
+rtx-4070-12gb-gddr6,NVIDIA,geforce-desktop,GeForce RTX 4070,Ada Lovelace,Desktop graphics card (PCIe add-in card),12,GDDR6,TBD,192,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,n/a,,,PCIe Gen 4,200
+rtx-4060-ti-16gb,NVIDIA,geforce-desktop,GeForce RTX 4060 Ti,Ada Lovelace,Desktop graphics card (PCIe add-in card),16,GDDR6,TBD,128,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,n/a,,,PCIe Gen 4,165
+rtx-4060-ti-8gb,NVIDIA,geforce-desktop,GeForce RTX 4060 Ti,Ada Lovelace,Desktop graphics card (PCIe add-in card),8,GDDR6,TBD,128,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,n/a,,,PCIe Gen 4,160
+rtx-4060-8gb,NVIDIA,geforce-desktop,GeForce RTX 4060,Ada Lovelace,Desktop graphics card (PCIe add-in card),8,GDDR6,TBD,128,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,n/a,,,PCIe Gen 4,115
+rtx-5090-32gb,NVIDIA,geforce-desktop,GeForce RTX 5090,Blackwell,Desktop graphics card (PCIe add-in card),32,GDDR7,1792,512,,TBD,TBD,104.8,104.8,209.5,209.5,419,419,838,TBD,1676,838,n/a,,,PCIe Gen 5,575
+rtx-5080-16gb,NVIDIA,geforce-desktop,GeForce RTX 5080,Blackwell,Desktop graphics card (PCIe add-in card),16,GDDR7,960,256,,TBD,TBD,56.3,56.3,112.6,112.6,225.1,225.1,450.2,TBD,900.4,450.2,n/a,,,PCIe Gen 5,360
+rtx-5070-ti-16gb,NVIDIA,geforce-desktop,GeForce RTX 5070 Ti,Blackwell,Desktop graphics card (PCIe add-in card),16,GDDR7,896,256,,TBD,TBD,43.9,43.9,87.9,87.9,175.8,175.8,351.5,TBD,703,351.5,n/a,,,PCIe Gen 5,300
+rtx-5070-12gb,NVIDIA,geforce-desktop,GeForce RTX 5070,Blackwell,Desktop graphics card (PCIe add-in card),12,GDDR7,672,192,,TBD,TBD,30.9,30.9,61.7,61.7,123.5,123.5,246.9,TBD,493.9,246.9,n/a,,,PCIe Gen 5,250
+rtx-5060-ti-16gb,NVIDIA,geforce-desktop,GeForce RTX 5060 Ti,Blackwell,Desktop graphics card (PCIe add-in card),16,GDDR7,448,128,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,TBD,TBD,TBD,n/a,,,PCIe Gen 5,180
+rtx-5060-ti-8gb,NVIDIA,geforce-desktop,GeForce RTX 5060 Ti,Blackwell,Desktop graphics card (PCIe add-in card),8,GDDR7,448,128,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,TBD,TBD,TBD,n/a,,,PCIe Gen 5,180
+rtx-5060-8gb,NVIDIA,geforce-desktop,GeForce RTX 5060,Blackwell,Desktop graphics card (PCIe add-in card),8,GDDR7,448,128,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,TBD,TBD,TBD,n/a,,,PCIe Gen 5,145
+rtx-5050-8gb,NVIDIA,geforce-desktop,GeForce RTX 5050,Blackwell,Desktop graphics card (PCIe add-in card),8,GDDR6,320,128,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,TBD,TBD,TBD,n/a,,,PCIe Gen 5,130
+rtx-5090-laptop-24gb,NVIDIA,geforce-laptop,GeForce RTX 5090 Laptop GPU,Blackwell,Laptop GPU,24,GDDR7,896,256,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,TBD,TBD,TBD,,,,PCIe Gen 5,150
+rtx-5080-laptop-16gb,NVIDIA,geforce-laptop,GeForce RTX 5080 Laptop GPU,Blackwell,Laptop GPU,16,GDDR7,896,256,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,TBD,TBD,TBD,,,,PCIe Gen 5,150
+rtx-5070-ti-laptop-12gb,NVIDIA,geforce-laptop,GeForce RTX 5070 Ti Laptop GPU,Blackwell,Laptop GPU,12,GDDR7,672,192,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,TBD,TBD,TBD,,,,PCIe Gen 5,115
+rtx-5070-laptop-12gb,NVIDIA,geforce-laptop,GeForce RTX 5070 Laptop GPU,Blackwell,Laptop GPU,12,GDDR7,384,128,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,TBD,TBD,TBD,,,,PCIe Gen 5,100
+rtx-5070-laptop-8gb,NVIDIA,geforce-laptop,GeForce RTX 5070 Laptop GPU,Blackwell,Laptop GPU,8,GDDR7,384,128,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,TBD,TBD,TBD,,,,PCIe Gen 5,100
+rtx-5060-laptop-8gb,NVIDIA,geforce-laptop,GeForce RTX 5060 Laptop GPU,Blackwell,Laptop GPU,8,GDDR7,384,128,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,TBD,TBD,TBD,,,,PCIe Gen 5,100
+rtx-5050-laptop-8gb,NVIDIA,geforce-laptop,GeForce RTX 5050 Laptop GPU,Blackwell,Laptop GPU,8,GDDR7,384,128,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,TBD,TBD,TBD,,,,PCIe Gen 5,100
+rtx-4090-laptop-16gb,NVIDIA,geforce-laptop,GeForce RTX 4090 Laptop GPU,Ada Lovelace,Laptop GPU,16,GDDR6,TBD,256,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,,,,PCIe Gen 4,150
+rtx-4080-laptop-12gb,NVIDIA,geforce-laptop,GeForce RTX 4080 Laptop GPU,Ada Lovelace,Laptop GPU,12,GDDR6,TBD,192,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,,,,PCIe Gen 4,150
+rtx-4070-laptop-8gb,NVIDIA,geforce-laptop,GeForce RTX 4070 Laptop GPU,Ada Lovelace,Laptop GPU,8,GDDR6,TBD,128,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,,,,PCIe Gen 4,115
+rtx-4060-laptop-8gb,NVIDIA,geforce-laptop,GeForce RTX 4060 Laptop GPU,Ada Lovelace,Laptop GPU,8,GDDR6,TBD,128,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,,,,PCIe Gen 4,115
+rtx-4050-laptop-6gb,NVIDIA,geforce-laptop,GeForce RTX 4050 Laptop GPU,Ada Lovelace,Laptop GPU,6,GDDR6,TBD,96,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,,,,PCIe Gen 4,115
+rtx-3080-ti-laptop-16gb,NVIDIA,geforce-laptop,GeForce RTX 3080 Ti Laptop GPU,Ampere,Laptop GPU,16,GDDR6,TBD,256,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,,,,PCIe Gen 4,150
+rtx-3080-laptop-16gb,NVIDIA,geforce-laptop,GeForce RTX 3080 Laptop GPU,Ampere,Laptop GPU,16,GDDR6,TBD,256,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,,,,PCIe Gen 4,150
+rtx-3080-laptop-8gb,NVIDIA,geforce-laptop,GeForce RTX 3080 Laptop GPU,Ampere,Laptop GPU,8,GDDR6,TBD,256,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,,,,PCIe Gen 4,150
+rtx-3070-ti-laptop-8gb,NVIDIA,geforce-laptop,GeForce RTX 3070 Ti Laptop GPU,Ampere,Laptop GPU,8,GDDR6,TBD,256,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,,,,PCIe Gen 4,125
+rtx-3070-laptop-8gb,NVIDIA,geforce-laptop,GeForce RTX 3070 Laptop GPU,Ampere,Laptop GPU,8,GDDR6,TBD,256,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,,,,PCIe Gen 4,125
+rtx-3060-laptop-6gb,NVIDIA,geforce-laptop,GeForce RTX 3060 Laptop GPU,Ampere,Laptop GPU,6,GDDR6,TBD,192,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,,,,PCIe Gen 4,115
+rtx-3050-ti-laptop-4gb,NVIDIA,geforce-laptop,GeForce RTX 3050 Ti Laptop GPU,Ampere,Laptop GPU,4,GDDR6,TBD,128,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,,,,PCIe Gen 4,80
+rtx-3050-laptop-6gb,NVIDIA,geforce-laptop,GeForce RTX 3050 Laptop GPU,Ampere,Laptop GPU,6,GDDR6,TBD,TBD,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,,,,PCIe Gen 4,80
+rtx-3050-laptop-4gb,NVIDIA,geforce-laptop,GeForce RTX 3050 Laptop GPU,Ampere,Laptop GPU,4,GDDR6,TBD,TBD,,TBD,TBD,TBD,TBD,TBD,TBD,,n/a,,n/a,n/a,TBD,,,,PCIe Gen 4,80
+rtx-3050-a-laptop-4gb,NVIDIA,geforce-laptop,GeForce RTX 3050 A Laptop GPU,Ada Lovelace,Laptop GPU,4,GDDR6,TBD,64,,TBD,TBD,TBD,TBD,TBD,TBD,,TBD,,n/a,n/a,TBD,,,,TBD,50

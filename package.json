@@ -1,0 +1,16 @@
+{
+  "name": "gpu-specs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cited GPU specifications: every number with its vendor source and the vendor's own words.",
+  "license": "SEE LICENSE IN README.md",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/build-csv.mjs",
+    "check": "node scripts/validate.mjs && node scripts/build-csv.mjs --check"
+  }
+}

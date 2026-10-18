@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "gpu-specs: cited GPU specifications"
+abstract: "Specifications for NVIDIA and AMD data center, workstation and GeForce GPUs. Every value cites a vendor document and quotes it."
+authors:
+  - family-names: Das
+    given-names: Debarshi
+    alias: DarkStark9000
+    website: "https://debarshidas.dev"
+version: 0.1.0
+date-released: "2026-10-18"
+license: CC-BY-4.0
+repository-code: "https://github.com/DarkStark9000/gpu-specs"
+keywords:
+  - GPU
+  - specifications
+  - datasheet
+  - NVIDIA
+  - AMD
