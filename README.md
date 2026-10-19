@@ -79,6 +79,91 @@ curl -LO https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/g
 
 The KV cache calculator on [debarshidas.dev](https://debarshidas.dev/tools/kv-cache-calculator) reads a pinned tag of this dataset.
 
+## Ask it a question
+
+The dataset is one JSON file, so `jq` can answer a question in one command. Each command below needs `curl` and `jq`, and reads the pinned release. Change the number after `--argjson` to move the line.
+
+Which GPUs have at least 192 GB of memory, as the vendor prints it? The result is GB, then the record id, largest first.
+
+```bash
+curl -s https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.json | jq -r --argjson min 192 '
+  .gpus[]
+  | select((.memory.capacity.value | type) == "number" and .memory.capacity.value >= $min)
+  | [.memory.capacity.value, .id] | @tsv
+' | sort -rn
+```
+
+Which GPUs have under 100 GiB of usable memory, as the driver reports it? Only a record with a public `nvidia-smi` sample has this figure, and the others are skipped, not guessed.
+
+```bash
+curl -s https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.json | jq -r --argjson max 100 '
+  .gpus[]
+  | select(.memory.reported.value != null and .memory.reported.value < $max * 1024)
+  | [(.memory.reported.value / 1024 * 10 | round / 10), .id] | @tsv
+' | sort -rn
+```
+
+Which Blackwell data center parts are there, and what is their dense FP8 compute in TFLOPS? `TBD` means the vendor does not publish the figure.
+
+```bash
+curl -s https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.json | jq -r '
+  .gpus[]
+  | select(.architecture.value == "Blackwell" and .segment == "datacenter")
+  | [.compute.fp8Tensor.value, .id] | @tsv
+'
+```
+
+Which data center GPUs give the most memory bandwidth for each watt of maximum board power? The ratio is GB/s per W, and it is derived from two cited values.
+
+```bash
+curl -s https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.json | jq -r '
+  .gpus[]
+  | select(.segment == "datacenter" and (.memory.bandwidth.value | type) == "number" and (.maxPowerW.value | type) == "number")
+  | [(.memory.bandwidth.value / .maxPowerW.value * 100 | round / 100), .id] | @tsv
+' | sort -rn | head -5
+```
+
+What did the vendor say about a number, and where? Change the record id and the field to look up another value.
+
+```bash
+curl -s https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.json | jq -r '
+  . as $d
+  | .gpus[] | select(.id == "h100-sxm5-80gb")
+  | .memory.bandwidth as $v
+  | ($d.sources[] | select(.id == $v.source)) as $s
+  | "\($v.value) \($v.unit)", $v.quote, $s.url
+'
+```
+
+The data has no launch date for a part. To filter by generation, use `architecture`, as in the third command.
+
+## Give it to an AI agent
+
+Paste this block into a chat or an agent's instructions, then add your question at the end. It tells the agent how to fetch the data, how to filter it, and how to credit it.
+
+```text
+You can use gpu-specs, an open dataset of cited NVIDIA and AMD GPU specifications.
+
+Data (JSON, the source of truth): https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.json
+Same GPUs as a table, with no sources or quotes: https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.csv
+Rules and field units: https://github.com/DarkStark9000/gpu-specs#readme
+
+Shape of the JSON: { "sources": [...], "gpus": [...] }. A GPU has id, vendor, segment (datacenter, workstation, geforce-desktop or geforce-laptop), name, architecture, formFactor, memory, compute, interconnect and maxPowerW. Each value is an object with value, unit, source and quote. The source is an id in the top-level sources list, which gives the document title, publisher and url.
+
+How to answer:
+1. Fetch the file. Never answer a number from memory.
+2. Filter it with jq or a short script. Do not read the whole file into the conversation.
+3. A value of "TBD" means the vendor does not publish it. A value of null with status "not-supported" means the part does not have the feature. Report both as they are. Never estimate and never fill a gap from another source.
+4. Compute figures are dense, not sparse. memory.capacity is the vendor's printed figure in GB. memory.reported is the driver-reported (usable) figure in MiB, and few records have it. Say which one you use.
+5. For each number, give the record id, the value with its unit, the vendor's quote and the source url.
+6. The data is a snapshot. Give the release tag and the source's retrieval date.
+
+When you publish or reuse the data, credit it as the CC BY 4.0 license (https://creativecommons.org/licenses/by/4.0/) requires, and say if you changed it:
+"GPU specifications from gpu-specs by Debarshi Das, CC BY 4.0, https://github.com/DarkStark9000/gpu-specs"
+
+My question:
+```
+
 ## Limits
 
 - **A snapshot.** Vendors revise pages and datasheets. Each source records its retrieval date.
