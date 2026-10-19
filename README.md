@@ -81,57 +81,62 @@ The KV cache calculator on [debarshidas.dev](https://debarshidas.dev/tools/kv-ca
 
 ## Ask it a question
 
-The dataset is one JSON file, so `jq` can answer a question in one command. Each command below needs `curl` and `jq`, and reads the pinned release. Change the number after `--argjson` to move the line.
+The dataset is one JSON file, so `jq` can answer a question in one command. Each command below needs `curl` and `jq` 1.6 or later, and reads the pinned release. The commands sort and filter inside `jq`, so they run the same in bash, zsh and PowerShell 7. In Windows PowerShell 5.1, write `curl.exe`, because `curl` is an alias there. Change a value after `--argjson` or `--arg` to ask a different question.
 
 Which GPUs have at least 192 GB of memory, as the vendor prints it? The result is GB, then the record id, largest first.
 
 ```bash
 curl -s https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.json | jq -r --argjson min 192 '
-  .gpus[]
-  | select((.memory.capacity.value | type) == "number" and .memory.capacity.value >= $min)
-  | [.memory.capacity.value, .id] | @tsv
-' | sort -rn
+  [.gpus[] | select(.memory.capacity.value | numbers | . >= $min) | [.memory.capacity.value, .id]]
+  | sort_by(-.[0])[]
+  | @tsv
+'
 ```
 
 Which GPUs have under 100 GiB of usable memory, as the driver reports it? Only a record with a public `nvidia-smi` sample has this figure, and the others are skipped, not guessed.
 
 ```bash
 curl -s https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.json | jq -r --argjson max 100 '
-  .gpus[]
-  | select(.memory.reported.value != null and .memory.reported.value < $max * 1024)
-  | [(.memory.reported.value / 1024 * 10 | round / 10), .id] | @tsv
-' | sort -rn
+  [.gpus[] | select(.memory.reported.value | numbers | . < $max * 1024) | [(.memory.reported.value / 1024 * 10 | round / 10), .id]]
+  | sort_by(-.[0])[]
+  | @tsv
+'
 ```
 
 Which Blackwell data center parts are there, and what is their dense FP8 compute in TFLOPS? `TBD` means the vendor does not publish the figure.
 
 ```bash
-curl -s https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.json | jq -r '
+curl -s https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.json | jq -r --arg arch Blackwell --arg seg datacenter '
   .gpus[]
-  | select(.architecture.value == "Blackwell" and .segment == "datacenter")
-  | [.compute.fp8Tensor.value, .id] | @tsv
+  | select(.architecture.value == $arch and .segment == $seg)
+  | [.compute.fp8Tensor.value, .id]
+  | @tsv
 '
 ```
 
 Which data center GPUs give the most memory bandwidth for each watt of maximum board power? The ratio is GB/s per W, and it is derived from two cited values.
 
 ```bash
-curl -s https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.json | jq -r '
-  .gpus[]
-  | select(.segment == "datacenter" and (.memory.bandwidth.value | type) == "number" and (.maxPowerW.value | type) == "number")
-  | [(.memory.bandwidth.value / .maxPowerW.value * 100 | round / 100), .id] | @tsv
-' | sort -rn | head -5
+curl -s https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.json | jq -r --arg seg datacenter '
+  [.gpus[]
+   | select(.segment == $seg)
+   | (.memory.bandwidth.value | numbers) as $bw
+   | (.maxPowerW.value | numbers) as $w
+   | [($bw / $w * 100 | round / 100), .id]]
+  | sort_by(-.[0])[:5][]
+  | @tsv
+'
 ```
 
 What did the vendor say about a number, and where? Change the record id and the field to look up another value.
 
 ```bash
-curl -s https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.json | jq -r '
+curl -s https://raw.githubusercontent.com/DarkStark9000/gpu-specs/v0.1.0/data/gpus.json | jq -r --arg id h100-sxm5-80gb '
   . as $d
-  | .gpus[] | select(.id == "h100-sxm5-80gb")
+  | .gpus[] | select(.id == $id)
   | .memory.bandwidth as $v
   | ($d.sources[] | select(.id == $v.source)) as $s
-  | "\($v.value) \($v.unit)", $v.quote, $s.url
+  | $v.value, $v.unit, $v.quote, $s.url
 '
 ```
 
